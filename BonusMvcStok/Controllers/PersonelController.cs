@@ -13,10 +13,15 @@ namespace BonusMvcStok.Controllers
     public class PersonelController : Controller
     {
         DbMvcStokEntities db = new DbMvcStokEntities();
-        public ActionResult Index(int sayfa=1)
+        [Authorize]
+        public ActionResult Index(string p)
         {
-            var personelliste = db.TblPersonel.Where(x => x.durum == true).ToList().ToPagedList(sayfa, 10);
-            return View(personelliste);
+            var personel = db.TblPersonel.Where(x => x.durum == true);
+            if (!string.IsNullOrEmpty(p))
+            {
+                personel = personel.Where(x => (x.ad.Contains(p) || x.soyad.Contains(p)) && x.durum == true);
+            }
+            return View(personel.ToList());
         }
         [HttpGet]
         public ActionResult YeniPersonel()

@@ -11,10 +11,15 @@ namespace BonusMvcStok.Controllers
     public class UrunController : Controller
     {
         DbMvcStokEntities db = new DbMvcStokEntities();
-        public ActionResult Index()
+        [Authorize]
+        public ActionResult Index(string p)
         {
-            var urunler = db.TblUrunler.Where(x=>x.durum==true).ToList();
-            return View(urunler);
+            var urunler = db.TblUrunler.Where(x => x.durum == true);
+            if (!string.IsNullOrEmpty(p))
+            {
+                urunler = urunler.Where(x => x.ad.Contains(p) && x.durum==true);
+            }
+            return View(urunler.ToList());
         }
         [HttpGet]
         public ActionResult YeniUrun()

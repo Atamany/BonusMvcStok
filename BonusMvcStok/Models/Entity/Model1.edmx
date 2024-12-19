@@ -5,6 +5,14 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="DbMvcStokModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="TblAdmin">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="kullanici" Type="varchar" MaxLength="20" />
+          <Property Name="sifre" Type="varchar" MaxLength="20" />
+        </EntityType>
         <EntityType Name="TblKategori">
           <Key>
             <PropertyRef Name="id" />
@@ -107,6 +115,7 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="DbMvcStokModelStoreContainer">
+          <EntitySet Name="TblAdmin" EntityType="Self.TblAdmin" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblKategori" EntityType="Self.TblKategori" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblMusteri" EntityType="Self.TblMusteri" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblPersonel" EntityType="Self.TblPersonel" Schema="dbo" store:Type="Tables" />
@@ -264,7 +273,16 @@
             <End Role="TblUrunler" EntitySet="TblUrunler" />
             <End Role="TblSatislar" EntitySet="TblSatislar" />
           </AssociationSet>
+          <EntitySet Name="TblAdmin" EntityType="DbMvcStokModel.TblAdmin" />
         </EntityContainer>
+        <EntityType Name="TblAdmin">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="kullanici" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="sifre" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -326,6 +344,15 @@
                 <ScalarProperty Name="alisfiyat" ColumnName="alisfiyat" />
                 <ScalarProperty Name="satisfiyat" ColumnName="satisfiyat" />
                 <ScalarProperty Name="kategori" ColumnName="kategori" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblAdmin">
+            <EntityTypeMapping TypeName="DbMvcStokModel.TblAdmin">
+              <MappingFragment StoreEntitySet="TblAdmin">
+                <ScalarProperty Name="sifre" ColumnName="sifre" />
+                <ScalarProperty Name="kullanici" ColumnName="kullanici" />
+                <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

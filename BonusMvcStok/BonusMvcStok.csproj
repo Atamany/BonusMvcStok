@@ -134,7 +134,9 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
+    <Compile Include="Controllers\GirisYapController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\KategoriController.cs" />
     <Compile Include="Controllers\MusteriController.cs" />
@@ -158,6 +160,9 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\TblAdmin.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Entity\TblKategori.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -231,6 +236,14 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="weblogin\css\fontawesome-all.css" />
+    <Content Include="weblogin\css\style.css" />
+    <Content Include="weblogin\images\cover4.jpg" />
+    <Content Include="weblogin\index.html" />
+    <Content Include="weblogin\w3layouts-License.txt" />
+    <Content Include="weblogin\webfonts\fa-brands-400.svg" />
+    <Content Include="weblogin\webfonts\fa-regular-400.svg" />
+    <Content Include="weblogin\webfonts\fa-solid-900.svg" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -261,6 +274,20 @@
     <Content Include="Views\Personel\Index.cshtml" />
     <Content Include="Views\Personel\YeniPersonel.cshtml" />
     <Content Include="Views\Personel\PersonelGetir.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\GirisYap\Giris.cshtml" />
+    <Content Include="weblogin\webfonts\fa-brands-400.eot" />
+    <Content Include="weblogin\webfonts\fa-brands-400.ttf" />
+    <Content Include="weblogin\webfonts\fa-brands-400.woff" />
+    <Content Include="weblogin\webfonts\fa-brands-400.woff2" />
+    <Content Include="weblogin\webfonts\fa-regular-400.eot" />
+    <Content Include="weblogin\webfonts\fa-regular-400.ttf" />
+    <Content Include="weblogin\webfonts\fa-regular-400.woff" />
+    <Content Include="weblogin\webfonts\fa-regular-400.woff2" />
+    <Content Include="weblogin\webfonts\fa-solid-900.eot" />
+    <Content Include="weblogin\webfonts\fa-solid-900.ttf" />
+    <Content Include="weblogin\webfonts\fa-solid-900.woff" />
+    <Content Include="weblogin\webfonts\fa-solid-900.woff2" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

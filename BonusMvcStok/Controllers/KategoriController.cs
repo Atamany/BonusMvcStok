@@ -10,10 +10,15 @@ namespace BonusMvcStok.Controllers
     public class KategoriController : Controller
     {
         DbMvcStokEntities db = new DbMvcStokEntities();
-        public ActionResult Index()
+        [Authorize]
+        public ActionResult Index(string p)
         {
-            var kategoriler = db.TblKategori.ToList();
-            return View(kategoriler);
+            var kategori = db.TblKategori;
+            if (!string.IsNullOrEmpty(p))
+            {
+                kategori = (System.Data.Entity.DbSet<TblKategori>)kategori.Where(x => x.ad.Contains(p));
+            }
+            return View(kategori.ToList());
         }
         [HttpGet]
         public ActionResult YeniKategori()

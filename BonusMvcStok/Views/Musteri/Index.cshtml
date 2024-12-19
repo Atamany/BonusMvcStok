@@ -6,6 +6,13 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
+@using (Html.BeginForm("Index", "Musteri", FormMethod.Get))
+{
+    <p>
+        Müşteri Adı-Soyadı: @Html.TextBox("p")
+        <input type="submit" class="btn btn-primary" value="Ara">
+    </p>
+}
 
 <table class="table table-bordered">
     <tr>
@@ -31,5 +38,5 @@
         </tr>
     }
 </table>
-@Html.PagedListPager((IPagedList)Model,sayfa => Url.Action("Index", new { sayfa }))
+@Html.PagedListPager((IPagedList)Model, sayfa => Url.Action("Index", new { sayfa }))
 <td><a href="/Musteri/YeniMusteri/" class="btn btn-primary">Yeni Müşteri</a></td>

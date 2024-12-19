@@ -30,5 +30,6 @@ namespace BonusMvcStok.Models.Entity
         public virtual DbSet<TblPersonel> TblPersonel { get; set; }
         public virtual DbSet<TblSatislar> TblSatislar { get; set; }
         public virtual DbSet<TblUrunler> TblUrunler { get; set; }
+        public virtual DbSet<TblAdmin> TblAdmin { get; set; }
     }
 }

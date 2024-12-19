@@ -11,6 +11,7 @@ namespace BonusMvcStok.Controllers
     public class SatislarController : Controller
     {
         DbMvcStokEntities db = new DbMvcStokEntities();
+        [Authorize]
         public ActionResult Index()
         {
             var satislar = db.TblSatislar.ToList();

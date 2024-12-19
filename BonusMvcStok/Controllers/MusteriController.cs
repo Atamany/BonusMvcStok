@@ -12,10 +12,15 @@ namespace BonusMvcStok.Controllers
     public class MusteriController : Controller
     {
         DbMvcStokEntities db = new DbMvcStokEntities();
-        public ActionResult Index(int sayfa=1)
+        [Authorize]
+        public ActionResult Index(string p, int sayfa = 1)
         {
-            var musteriliste = db.TblMusteri.Where(x=>x.durum==true).ToList().ToPagedList(sayfa,10);
-            return View(musteriliste);
+            var musteri = db.TblMusteri.Where(x => x.durum == true) ;
+            if (!string.IsNullOrEmpty(p))
+            {
+                musteri = musteri.Where(x => (x.ad.Contains(p) || x.soyad.Contains(p)) && x.durum == true);
+            }
+            return View(musteri.ToList().ToPagedList(sayfa, 10));
         }
         [HttpGet]
         public ActionResult YeniMusteri()

@@ -6,7 +6,13 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
-
+@using (Html.BeginForm("Index", "Personel", FormMethod.Get))
+{
+    <p>
+        Personel Adı-Soyadı: @Html.TextBox("p")
+        <input type="submit" class="btn btn-primary" value="Ara">
+    </p>
+}
 <table class="table table-bordered">
     <tr>
         <th>ID</th>

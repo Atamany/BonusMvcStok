@@ -14,6 +14,7 @@
         <AssociationConnector Association="DbMvcStokModel.FK_TblSatislar_TblMusteri" ManuallyRouted="false" />
         <AssociationConnector Association="DbMvcStokModel.FK_TblSatislar_TblPersonel" ManuallyRouted="false" />
         <AssociationConnector Association="DbMvcStokModel.FK_TblSatislar_TblUrunler" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="DbMvcStokModel.TblAdmin" Width="1.5" PointX="5.375" PointY="4.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
