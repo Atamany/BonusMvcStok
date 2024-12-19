@@ -1,0 +1,24 @@
+﻿@model BonusMvcStok.Models.Entity.TblUrunler
+
+@{
+    ViewBag.Title = "YeniUrun";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<form method="post">
+    <h2>Yeni Ürün Ekleme</h2><br />
+    <label>Ad</label>
+    @Html.TextBoxFor(x => x.ad, new { @class = "form-control", @placeholder = "Ad" })<br />
+    <label>Marka</label>
+    @Html.TextBoxFor(x => x.marka, new { @class = "form-control", @placeholder = "Marka" })<br />
+    <label>Stok</label>
+    @Html.TextBoxFor(x => x.stok, new { @class = "form-control", @placeholder = "Stok" })<br />
+    <label>Alış Fiyatı</label>
+    @Html.TextBoxFor(x => x.alisfiyat, new { @class = "form-control", @placeholder = "Alış Fiyatı" })<br />
+    <label>Satış Fiyatı</label>
+    @Html.TextBoxFor(x => x.satisfiyat, new { @class = "form-control", @placeholder = "Satış Fiyatı" })<br />
+    <label>Kategori</label>
+    @Html.DropDownListFor(x => x.TblKategori.id, (List<SelectListItem>)ViewBag.drop, new { @class = "form-control" })<br />
+    <button class="btn btn-info">Kaydet!</button>
+</form>
+

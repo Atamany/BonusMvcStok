@@ -27,6 +27,7 @@ namespace BonusMvcStok.Models.Entity
         public Nullable<decimal> alisfiyat { get; set; }
         public Nullable<decimal> satisfiyat { get; set; }
         public Nullable<int> kategori { get; set; }
+        public Nullable<bool> durum { get; set; }
     
         public virtual TblKategori TblKategori { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
