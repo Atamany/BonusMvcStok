@@ -20,6 +20,7 @@ namespace BonusMvcStok.Models.Entity
         public Nullable<int> musteri { get; set; }
         public Nullable<decimal> fiyat { get; set; }
         public Nullable<System.DateTime> tarih { get; set; }
+        public Nullable<bool> durum { get; set; }
     
         public virtual TblMusteri TblMusteri { get; set; }
         public virtual TblPersonel TblPersonel { get; set; }

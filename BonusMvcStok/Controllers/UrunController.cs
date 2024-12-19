@@ -48,7 +48,7 @@ namespace BonusMvcStok.Controllers
 
         public ActionResult UrunGetir(int id)
         {
-            var ktgr = db.TblUrunler.Find(id);
+            var urun = db.TblUrunler.Find(id);
             List<SelectListItem> ktg = (from x in db.TblKategori.ToList()
                                         select new SelectListItem
                                         {
@@ -56,7 +56,7 @@ namespace BonusMvcStok.Controllers
                                             Value = x.id.ToString()
                                         }).ToList();
             ViewBag.urunKategori = ktg;
-            return View("UrunGetir", ktgr);
+            return View("UrunGetir", urun);
         }
         public ActionResult UrunGuncelle(TblUrunler k)
         {

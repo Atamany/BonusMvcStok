@@ -11,8 +11,7 @@ namespace BonusMvcStok.Models.Entity
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class TblPersonel
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -25,6 +24,7 @@ namespace BonusMvcStok.Models.Entity
         public string ad { get; set; }
         public string soyad { get; set; }
         public string departman { get; set; }
+        public Nullable<bool> durum { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TblSatislar> TblSatislar { get; set; }

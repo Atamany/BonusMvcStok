@@ -1,0 +1,34 @@
+﻿@using BonusMvcStok.Models.Entity;
+@using PagedList
+@using PagedList.Mvc
+@model IPagedList<TblPersonel>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Ad</th>
+        <th>Soyad</th>
+        <th>Departman</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.id</td>
+            <td>@x.ad</td>
+            <td>@x.soyad</td>
+            <td>@x.departman</td>
+            <td><a href="/Personel/PersonelSil/@x.id" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Personel/PersonelGetir/@x.id" class="btn btn-success">Güncelle</a></td>
+
+        </tr>
+    }
+</table>
+@Html.PagedListPager((IPagedList)Model, sayfa => Url.Action("Index", new { sayfa }))
+<td><a href="/Personel/YeniPersonel/" class="btn btn-primary">Yeni Personel</a></td>
+

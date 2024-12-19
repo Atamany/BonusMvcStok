@@ -31,6 +31,7 @@
           <Property Name="ad" Type="varchar" MaxLength="30" />
           <Property Name="soyad" Type="varchar" MaxLength="30" />
           <Property Name="departman" Type="varchar" MaxLength="30" />
+          <Property Name="durum" Type="bit" />
         </EntityType>
         <EntityType Name="TblSatislar">
           <Key>
@@ -42,6 +43,7 @@
           <Property Name="musteri" Type="int" />
           <Property Name="fiyat" Type="decimal" Precision="18" Scale="2" />
           <Property Name="tarih" Type="smalldatetime" />
+          <Property Name="durum" Type="bit" />
         </EntityType>
         <EntityType Name="TblUrunler">
           <Key>
@@ -160,6 +162,7 @@
           <Property Name="soyad" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="departman" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="TblSatislar" Relationship="Self.FK_TblSatislar_TblPersonel" FromRole="TblPersonel" ToRole="TblSatislar" />
+          <Property Name="durum" Type="Boolean" />
         </EntityType>
         <EntityType Name="TblSatislar">
           <Key>
@@ -174,6 +177,7 @@
           <NavigationProperty Name="TblMusteri" Relationship="Self.FK_TblSatislar_TblMusteri" FromRole="TblSatislar" ToRole="TblMusteri" />
           <NavigationProperty Name="TblPersonel" Relationship="Self.FK_TblSatislar_TblPersonel" FromRole="TblSatislar" ToRole="TblPersonel" />
           <NavigationProperty Name="TblUrunler" Relationship="Self.FK_TblSatislar_TblUrunler" FromRole="TblSatislar" ToRole="TblUrunler" />
+          <Property Name="durum" Type="Boolean" />
         </EntityType>
         <EntityType Name="TblUrunler">
           <Key>
@@ -290,6 +294,7 @@
           <EntitySetMapping Name="TblPersonel">
             <EntityTypeMapping TypeName="DbMvcStokModel.TblPersonel">
               <MappingFragment StoreEntitySet="TblPersonel">
+                <ScalarProperty Name="durum" ColumnName="durum" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="ad" ColumnName="ad" />
                 <ScalarProperty Name="soyad" ColumnName="soyad" />
@@ -300,6 +305,7 @@
           <EntitySetMapping Name="TblSatislar">
             <EntityTypeMapping TypeName="DbMvcStokModel.TblSatislar">
               <MappingFragment StoreEntitySet="TblSatislar">
+                <ScalarProperty Name="durum" ColumnName="durum" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="urun" ColumnName="urun" />
                 <ScalarProperty Name="personel" ColumnName="personel" />
