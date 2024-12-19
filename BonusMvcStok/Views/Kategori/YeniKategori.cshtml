@@ -1,0 +1,11 @@
+﻿@model BonusMvcStok.Models.Entity.TblKategori
+@{
+    ViewBag.Title = "YeniKategori";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<form method="post">
+    <h2>Yeni Kategori Ekleme</h2><br />
+    <label>Kategori Adı</label>
+    <input type="text" class="form-control" name="ad" placeholder="Kategori Adı" /><br />
+    <button class="btn btn-info">Kaydet!</button>
+</form>

@@ -236,6 +236,8 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_AdminLayout.cshtml" />
     <Content Include="Views\Kategori\Index.cshtml" />
+    <Content Include="Views\Kategori\YeniKategori.cshtml" />
+    <Content Include="Views\Kategori\KategoriGetir.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
