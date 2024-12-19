@@ -14,7 +14,7 @@ namespace BonusMvcStok.Controllers
         [Authorize]
         public ActionResult Index()
         {
-            var satislar = db.TblSatislar.ToList();
+            var satislar = db.TblSatislar.Where(x => x.durum == true).ToList();
             return View(satislar);
         }
         [HttpGet]

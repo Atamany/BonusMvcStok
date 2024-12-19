@@ -20,11 +20,11 @@
     <label>Müşteri</label>
     @Html.DropDownListFor(x => x.TblMusteri.id, (List<SelectListItem>)ViewBag.musteri, new { @class = "form-control" })
     <br />
-    <label>Fiyat</label>
-    @Html.TextBoxFor(x => x.fiyat, new { @class = "form-control" })
+    
+    @Html.HiddenFor(x => x.fiyat, new { @class = "form-control" })
     <br />
-    <label>Tarih</label>
-    @Html.TextBoxFor(x => x.tarih, new { @class = "form-control" })
+    
+    @Html.HiddenFor(x => x.tarih, new { @class = "form-control" })
     <br />
     <button class="btn btn-warning">Güncelle!</button>
 }

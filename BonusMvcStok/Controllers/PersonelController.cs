@@ -14,14 +14,14 @@ namespace BonusMvcStok.Controllers
     {
         DbMvcStokEntities db = new DbMvcStokEntities();
         [Authorize]
-        public ActionResult Index(string p)
+        public ActionResult Index(string p, int sayfa=1)
         {
             var personel = db.TblPersonel.Where(x => x.durum == true);
             if (!string.IsNullOrEmpty(p))
             {
                 personel = personel.Where(x => (x.ad.Contains(p) || x.soyad.Contains(p)) && x.durum == true);
             }
-            return View(personel.ToList());
+            return View(personel.ToList().ToPagedList(sayfa, 10));
         }
         [HttpGet]
         public ActionResult YeniPersonel()
