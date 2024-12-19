@@ -21,6 +21,7 @@
           <Property Name="soyad" Type="varchar" MaxLength="30" />
           <Property Name="sehir" Type="varchar" MaxLength="15" />
           <Property Name="bakiye" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="durum" Type="bit" />
         </EntityType>
         <EntityType Name="TblPersonel">
           <Key>
@@ -148,6 +149,7 @@
           <Property Name="sehir" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
           <Property Name="bakiye" Type="Decimal" Precision="18" Scale="2" />
           <NavigationProperty Name="TblSatislar" Relationship="Self.FK_TblSatislar_TblMusteri" FromRole="TblMusteri" ToRole="TblSatislar" />
+          <Property Name="durum" Type="Boolean" />
         </EntityType>
         <EntityType Name="TblPersonel">
           <Key>
@@ -276,6 +278,7 @@
           <EntitySetMapping Name="TblMusteri">
             <EntityTypeMapping TypeName="DbMvcStokModel.TblMusteri">
               <MappingFragment StoreEntitySet="TblMusteri">
+                <ScalarProperty Name="durum" ColumnName="durum" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="ad" ColumnName="ad" />
                 <ScalarProperty Name="soyad" ColumnName="soyad" />

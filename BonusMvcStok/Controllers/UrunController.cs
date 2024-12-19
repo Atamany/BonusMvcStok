@@ -31,6 +31,7 @@ namespace BonusMvcStok.Controllers
         [HttpPost]
         public ActionResult YeniUrun(TblUrunler p)
         {
+            p.durum = true;
             var ktgr = db.TblKategori.Where(x => x.id == p.TblKategori.id).FirstOrDefault();
             p.TblKategori = ktgr;
             db.TblUrunler.Add(p);

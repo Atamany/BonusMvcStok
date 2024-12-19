@@ -11,7 +11,8 @@ namespace BonusMvcStok.Models.Entity
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class TblMusteri
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -21,10 +22,14 @@ namespace BonusMvcStok.Models.Entity
         }
     
         public int id { get; set; }
+        [Required(ErrorMessage = "Ad Alanýný Boþ Geçemezsiniz!")]
         public string ad { get; set; }
+        [Required(ErrorMessage = "Soyad Alanýný Boþ Geçemezsiniz!")]
+        [StringLength(30, ErrorMessage = "En Fazla 30 Karakter Girebilirsiniz!")]
         public string soyad { get; set; }
         public string sehir { get; set; }
         public Nullable<decimal> bakiye { get; set; }
+        public Nullable<bool> durum { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TblSatislar> TblSatislar { get; set; }
