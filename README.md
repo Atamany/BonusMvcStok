@@ -1,5 +1,6 @@
 <h1> 🚀 Bonus MVC Stok Programı </h1>
 <h3>.Net MVC ile hazırlanmış, Admin panelli, Stok/Müşteri/Personel/Ürün/Kategori takip programı.</h3><br />
+<p> 🏷️ Murat Yücedağ tarafından Udemy eğitim platformunda yayınlanan "MVC5 ile Sıfırdan Adım Adım Web Projesi Geliştirme" eğitimi kapsamında tamamladığım 2. proje.</p>
 
 <h3>Giriş Ekranı</h3>
 <img src="https://github.com/user-attachments/assets/4f0417b6-3304-40a3-91eb-d7d09655bd54" title="Giriş Ekranı" alt="Giriş Ekranı">
